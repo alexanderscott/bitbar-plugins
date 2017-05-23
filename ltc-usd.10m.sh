@@ -12,4 +12,5 @@
 # by Nikita Zhavoronkov
 # Based on Coinbase bitbar plugin by Mat Ryer
 
-echo -n "Ł"; curl -s "https://www.cryptonator.com/api/ticker/ltc-usd" | egrep -o '"price":"[0-9]+(\.)?([0-9]{1})"?' | sed 's/"price":/ /' | sed 's/\"//g'
+echo -n "Ł"; curl -s "https://coinbase.com/api/v1/prices/spot_rate?currency=LTC" | egrep -o '"amount":"[0-9]+(\.)?([0-9]{0}")?' | sed 's/"amount"://'  | sed 's:^.\(.*\).$:\1:'
+# echo -n "Ł"; curl -s "https://www.cryptonator.com/api/ticker/ltc-usd" | egrep -o '"price":"[0-9]+(\.)?([0-9]{1})"?' | sed 's/"price":/ /' | sed 's/\"//g'
