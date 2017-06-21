@@ -12,5 +12,5 @@
 # by Nikita Zhavoronkov
 # Based on Coinbase bitbar plugin by Mat Ryer
 
-echo -n "𝚵"; curl -s "https://api.coinbase.com/v2/prices/ETH-USD/spot" | egrep -o '"amount":"[0-9]+(\.)?([0-9]{0,2}")?' | sed 's/"amount"://'  | sed 's:^.\(.*\).$:\1:'
+echo -n "𝚵"; curl -s "https://api.coinbase.com/v2/prices/ETH-USD/spot" | egrep -o '"amount":"[0-9]+(\.)?([0-9]{0}")?' | sed 's/"amount"://'  | sed 's:^.\(.*\).$:\1:'
 
